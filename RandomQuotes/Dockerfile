@@ -7,7 +7,7 @@ RUN dotnet restore
 
 # Copy everything else and build
 COPY . ./
-RUN dotnet publish RandomQuotes -c Release -f net5.0 -o out
+RUN dotnet publish ./RandomQuotes/RandomQuotes.csproj -c Release -f net5.0 -o out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim
